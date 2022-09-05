@@ -1,3 +1,4 @@
+
 const series = [
     {nombre:"skins",anio:2007},
     {nombre:"on my block",anio:2018},
@@ -27,23 +28,3 @@ ordenarAscendente();
 console.log("-----------")
 series.forEach(elemento => console.log(elemento))
 
-//4) Con el array de series, quiero eliminar un elemento segun su titulo sin modificar el array original.
-
-function copiarArray(miArray){
-    let arrayDevolver=[];
-    miArray.forEach(elemento => arrayDevolver.push(elemento));
-    return arrayDevolver;
-}
-
-let nuevoArray = copiarArray(series);
-
-function borrarPorNombre(nombreSerie, miArray){
-    for (let i = 0; i < miArray.length; i++) {
-        if(miArray[i].nombre==nombreSerie){
-            miArray.splice(i,1)
-        }
-      }
-}
-let nombreSerie = "manifiesto"
-borrarPorNombre(nombreSerie,nuevoArray);
-nuevoArray.forEach(elemento => console.log(elemento))
