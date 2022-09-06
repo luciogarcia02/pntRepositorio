@@ -1,12 +1,12 @@
 // version para 3 correrdores
 async function ponerACorrer(){
     console.log("3...2...1...YA!!!")
-    
-    const corredor1promise = crearCorredor(1);
-    const corredor2promise = crearCorredor(2);
-    const corredor3promise = crearCorredor(3);
-  
-    const corredores=[corredor1promise,corredor2promise,corredor3promise];
+    const corredores=[];
+
+    for (let i = 0; i < 19; i++) {
+        corredores[i]=crearCorredor(i);
+      }
+
     console.log("corriendo...")
     const ganadorPromise = await Promise.race(corredores);
     console.log("gano el corredor "+ganadorPromise);
